@@ -9,3 +9,8 @@ cnpm install --save-dev @commitlint/{config-conventional,cli}
 cnpm install husky --save-dev
 
 curl -O https://raw.githubusercontent.com/emacsist/git-commit-init/master/.huskyrc
+
+jq -s '.[0] * .[1]' .huskyrc package.json > tmp.json
+mv package.json package.json.bak
+mv tmp.json package.json
+rm .huskyrc
