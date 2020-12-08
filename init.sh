@@ -7,3 +7,5 @@ cnpm install --save-dev @commitlint/config-angular @commitlint/cli
 echo "module.exports = {extends: ['@commitlint/config-angular']};" > commitlint.config.js
 cnpm install --save-dev @commitlint/{config-conventional,cli}
 cnpm install husky --save-dev
+
+curl -O https://raw.githubusercontent.com/emacsist/git-commit-init/master/.huskyrc
