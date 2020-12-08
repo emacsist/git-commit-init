@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+sudo apt install jq
+
+git init .
+
 cnpm install -g commitizen conventional-changelog conventional-changelog-cli
 cnpm init --yes
 commitizen init cz-conventional-changelog --save --save-exact
@@ -8,7 +12,8 @@ echo "module.exports = {extends: ['@commitlint/config-angular']};" > commitlint.
 cnpm install --save-dev @commitlint/{config-conventional,cli}
 cnpm install husky --save-dev
 
-curl -O https://raw.githubusercontent.com/emacsist/git-commit-init/master/.huskyrc
+#curl -O https://raw.githubusercontent.com/emacsist/git-commit-init/master/.huskyrc
+curl -O https://gitee.com/emacsist/git-commit-init/raw/master/.huskyrc
 
 jq -s '.[0] * .[1]' .huskyrc package.json > tmp.json
 mv package.json package.json.bak
